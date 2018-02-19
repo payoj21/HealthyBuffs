@@ -10,7 +10,7 @@ can book for appointments at pathlabs for specific tests.
 can view their records.
 can view their history.
 can view their reports from pathlabs but not change them.
-patients can chat with their doctors and pharmacists
+patients can chat with their doctors.
 
 admin:
 Able to login with special permissions.
