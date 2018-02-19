@@ -1,0 +1,2 @@
+# HealthyBuffs
+HealthyBuffs is a healthcare management platform exclusively for students, faculties and other members of CU Boulder where people can locate doctors, pharmacists, pathologists, consultants and book appointments. This platform can also be used for looking up medicines availability in pharmacies. The portal also manages medical records/history of each patient so that it is easier for doctors to make their diagnosis and pharmacists can suggest medicines to patients.
