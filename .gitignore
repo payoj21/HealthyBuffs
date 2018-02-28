@@ -1,5 +1,3 @@
-
 .DS_Store
 .idea/*
-class-diag/
-class-diag/*
+/class-diag/*
