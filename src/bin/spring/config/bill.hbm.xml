@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+          <hibernate-mapping>
+          <class name="models.Bill" table="Bill">
+          <id name="bill_id">
+          <generator class="assigned"></generator>
+          </id>
+          
+          
+          <property name="patient_id" type="int" column="patient" />
+          <property name="prescription_id" type = "int" column="prescription"/>
+          <property name="final_cost" type = "double" column = "cost"/>
+          
+          
+          </class>
+          
+          </hibernate-mapping>
