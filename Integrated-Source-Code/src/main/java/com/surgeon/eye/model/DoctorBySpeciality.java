@@ -1,5 +1,4 @@
 package com.surgeon.eye.model;
-
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -9,7 +8,7 @@ import lombok.Data;
 
 @Data
 @Document(collection="doctors")
-public class Doctor {
+public class DoctorBySpeciality {
 	
 	@Id
 	private String id;
@@ -19,7 +18,6 @@ public class Doctor {
 	private String address;
 	private String speciality;
 	private String officeHours;
-	private List<Query> queries;
-	private List<DoctorAppointmentDetails> appointments;
 
 }
+

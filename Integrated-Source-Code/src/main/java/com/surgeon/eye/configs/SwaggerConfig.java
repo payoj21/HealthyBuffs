@@ -22,7 +22,8 @@ public class SwaggerConfig {
 				.paths(Predicates.or(PathSelectors.regex("/user.*"),
 						PathSelectors.regex("/doctor.*"),
 						PathSelectors.regex("/patient.*"),
-						PathSelectors.regex("/pharmacist.*"),
+						PathSelectors.regex("/pathologist.*"),
+						PathSelectors.regex("/query.*"),
 						PathSelectors.regex("/admin.*")))
 						.build();
 		

@@ -34,7 +34,7 @@ public class PharmacistServiceImpl {
 		if( pharmaId!=null && appointmentDetails!=null) {
 			pharmacist =	pharmacistRepository.findOne(pharmaId);
 			if(pharmacist==null)
-				throw new RuntimeException("No Pharmacist found");
+				throw new RuntimeException("No Pathologist found");
 			if(appointmentDetails.getPatientId()==null)
 				throw new IllegalArgumentException("Invalid patient Id");
 			else {

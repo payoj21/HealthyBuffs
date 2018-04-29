@@ -18,6 +18,7 @@ public class Patient {
 	private String email;
 	private int age;
 	private String gender;
+	private List<Query> queries;
 	private List<Prescription> prescriptions;
 	
 

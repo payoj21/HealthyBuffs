@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.surgeon.eye.model.Patient;
 import com.surgeon.eye.model.Prescription;
 import com.surgeon.eye.services.impl.PatientServiceImpl;
-
+import com.surgeon.eye.services.impl.QueryServiceImpl;
+import com.surgeon.eye.model.Query;
 @RestController
 @RequestMapping("/patient")
 public class PatientController {
@@ -22,6 +23,8 @@ public class PatientController {
 	@Autowired
 	PatientServiceImpl patientServiceImpl;
 
+	
+	
 	@RequestMapping(value="/saveprescription", method=RequestMethod.POST)
 	public Patient savePrescription(@RequestBody Prescription prescription,
 			@RequestParam("patientId") String patientId) {
@@ -36,4 +39,6 @@ public class PatientController {
 		
 			return prescription;
 	}
+	
+	
 }

@@ -1,7 +1,9 @@
 package com.surgeon.eye.services.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,8 @@ import com.surgeon.eye.Repositories.PatientRepository;
 import com.surgeon.eye.model.Doctor;
 import com.surgeon.eye.model.Patient;
 import com.surgeon.eye.model.Prescription;
+import com.surgeon.eye.model.Query;
+import com.surgeon.eye.Repositories.QueryRepository;
 
 @Service
 public class PatientServiceImpl {
@@ -21,6 +25,8 @@ public class PatientServiceImpl {
 	
 	@Autowired
 	DoctorRepository doctorRepository;
+	
+	
 	
 	public Patient savePrescription(Prescription prescription, String patientId) {
 		Patient patient=null;
@@ -54,11 +60,11 @@ public class PatientServiceImpl {
 				throw new RuntimeException("No such registered patient with us");
 			else
 				prescription=patient.getPrescriptions();
-		}
-		
+		}		
 			return prescription;
 		
 		
 	}
-
+	
+	
 }
