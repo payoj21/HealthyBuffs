@@ -8,6 +8,6 @@ import lombok.Data;
 public class Specialization {
 
     private List<Specialization> specialization;
-    
+
 
 }
