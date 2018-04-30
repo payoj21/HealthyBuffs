@@ -1,7 +1,0 @@
-Sequence Case Diagram Modifications:
-1. remove data types. 
-2. method calls should have appropriate brackets. 
-3. CHeak for misspelled words. 
-4. return values should be changed to a variable instead of a datatype.
-5. Add secondary activation boxes. 
-6. searchLocation function is missing parameters.
