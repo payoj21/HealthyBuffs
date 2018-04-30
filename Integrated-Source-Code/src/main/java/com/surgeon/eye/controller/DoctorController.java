@@ -32,4 +32,10 @@ public class DoctorController {
 		List<DoctorBySpeciality> doctorList =doctorServiceImpl.getDoctors(speciality);
 			return doctorList;
 		}
+	@RequestMapping(value="/schedule", method=RequestMethod.GET)
+	public List <DoctorAppointmentDetails> getAppointments(@RequestParam("doctorId") String doctorId) {
+		List<DoctorAppointmentDetails> doctorList =doctorServiceImpl.viewAppointments(doctorId);
+			return doctorList;
+		}
+	
 }

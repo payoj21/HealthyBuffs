@@ -9,6 +9,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
@@ -91,5 +92,10 @@ public class DoctorServiceImpl {
 		
 		
 		return doctorsList;
+	}
+	public List<DoctorAppointmentDetails>viewAppointments(String doctorId){
+		Doctor doctor = null;
+		doctor = 	doctorRepository.findOne(doctorId);
+		return doctor.getAppointments();
 	}
 }
