@@ -19,6 +19,7 @@ public class Doctor {
 	private String address;
 	private String speciality;
 	private String officeHours;
+	private List<Query> queries;
 	private List<DoctorAppointmentDetails> appointments;
 
 }

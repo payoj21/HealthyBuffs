@@ -9,6 +9,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ import com.surgeon.eye.Repositories.PatientRepository;
 import com.surgeon.eye.model.Doctor;
 import com.surgeon.eye.model.DoctorAppointmentDetails;
 import com.surgeon.eye.model.Patient;
+import com.surgeon.eye.model.DoctorBySpeciality;
 
 @Service
 public class DoctorServiceImpl {
@@ -60,17 +62,17 @@ public class DoctorServiceImpl {
 					appointmentDetails.setRecordId(uuid);
 					doctor.getAppointments().add(appointmentDetails);
 					doctor= doctorRepository.save(doctor);
-					List <DoctorAppointmentDetails> app = doctor.getAppointments();
-					for(int i = 0;i< app.size(); i++) {
-//						String id = app.get(i).getRecordId();
-						
-//						if (id == uuid) {
-//						new Date("<YYYY-mm-ddTHH:MM:ss>") date =  app.get(i).getDate();
-						String pattern = "yyyy-MM-dd|HH:MM:ss";
-						SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
-//						}
-					
-					}
+//					List <DoctorAppointmentDetails> app = doctor.getAppointments();
+//					for(int i = 0;i< app.size(); i++) {
+////						String id = app.get(i).getRecordId();
+//						
+////						if (id == uuid) {
+////						new Date("<YYYY-mm-ddTHH:MM:ss>") date =  app.get(i).getDate();
+//						String pattern = "yyyy-MM-dd|HH:MM:ss";
+//						SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+////						}
+//					
+//					}
 					
 					
 					
@@ -85,8 +87,15 @@ public class DoctorServiceImpl {
 		return doctor;
 	}
 	
-	public List<Doctor> getDoctors(String speciality){
-	return	doctorRepository.findBySpeciality(speciality);
+	public List<DoctorBySpeciality> getDoctors(String speciality){
+		List<DoctorBySpeciality>doctorsList =	doctorRepository.findBySpeciality(speciality);
 		
+		
+		return doctorsList;
+	}
+	public List<DoctorAppointmentDetails>viewAppointments(String doctorId){
+		Doctor doctor = null;
+		doctor = 	doctorRepository.findOne(doctorId);
+		return doctor.getAppointments();
 	}
 }

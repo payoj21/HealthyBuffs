@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.surgeon.eye.model.Doctor;
 import com.surgeon.eye.model.DoctorAppointmentDetails;
 import com.surgeon.eye.services.impl.DoctorServiceImpl;
-
+import com.surgeon.eye.model.DoctorBySpeciality;
 @RestController
 @RequestMapping("/doctor")
 public class DoctorController {
@@ -28,8 +28,14 @@ public class DoctorController {
 		}
 	
 	@RequestMapping(value="/details", method=RequestMethod.GET)
-	public List <Doctor> getDoctors(@RequestParam("specialisation") String speciality) {
-		List<Doctor> doctorList =doctorServiceImpl.getDoctors(speciality);
+	public List <DoctorBySpeciality> getDoctors(@RequestParam("specialisation") String speciality) {
+		List<DoctorBySpeciality> doctorList =doctorServiceImpl.getDoctors(speciality);
 			return doctorList;
 		}
+	@RequestMapping(value="/schedule", method=RequestMethod.GET)
+	public List <DoctorAppointmentDetails> getAppointments(@RequestParam("doctorId") String doctorId) {
+		List<DoctorAppointmentDetails> doctorList =doctorServiceImpl.viewAppointments(doctorId);
+			return doctorList;
+		}
+	
 }
